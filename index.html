@@ -1,0 +1,349 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wab Comércio de Peças e Acessórios</title>
+    <meta name="description" content="A Wab é especialista no comércio varejista de ferragens, ferramentas e peças novas para veículos automotores.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuração de Cores do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a', // Azul institucional escuro
+                            orange: '#ea580c', // Laranja mecânico/ferramentas
+                            dark: '#0f172a', // Fundo escuro premium
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Cabeçalho (Barra de Navegação) -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logotipo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-3xl font-bold text-brand-blue tracking-tighter">WAB</span>
+                    <span class="ml-2 text-sm font-semibold text-gray-500 uppercase tracking-widest hidden sm:block border-l-2 border-brand-orange pl-2">Peças e<br>Acessórios</span>
+                </div>
+                
+                <!-- Menu de Computador -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-brand-orange font-medium transition">Início</a>
+                    <a href="#produtos" class="text-gray-700 hover:text-brand-orange font-medium transition">Produtos</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-brand-orange font-medium transition">Sobre Nós</a>
+                    <a href="#contato" class="text-gray-700 hover:text-brand-orange font-medium transition">Contato</a>
+                </nav>
+
+                <!-- Botão de Menu para Celular -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-orange focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Suspenso para Celular -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-inner">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Início</a>
+                <a href="#produtos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Produtos</a>
+                <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Sobre Nós</a>
+                <a href="#contato" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Inicial (Destaque Principal com Gradiente e Geometria) -->
+    <section id="inicio" class="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center min-h-[85vh] bg-gradient-to-br from-brand-dark via-slate-900 to-slate-850 overflow-hidden">
+        <!-- Detalhes Geométricos de Fundo para dar textura sem imagens -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-3/5">
+                <span class="text-brand-orange font-bold tracking-wider uppercase text-xs sm:text-sm mb-4 block">Qualidade & Confiança para seu Projeto ou Veículo</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    Soluções completas em <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500">Ferragens</span> e <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Peças Automotivas</span>.
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                    Tudo o que você precisa para manutenção, conserto ou melhoria do seu veículo e projeto. Amplo catálogo de peças novas e ferramentas de alta durabilidade.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://wa.me/5511948591551" target="_blank" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center text-base">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i> Fale no WhatsApp
+                    </a>
+                    <a href="#produtos" class="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl transition-all transform hover:-translate-y-1 flex items-center justify-center border border-white/20 text-base">
+                        Ver Linha de Produtos
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Ilustração Técnica em Vetor (Substituindo a foto) -->
+            <div class="md:w-2/5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-tr from-brand-blue/30 to-brand-orange/20 rounded-2xl border border-white/10 p-8 flex flex-col justify-between shadow-2xl backdrop-blur-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="text-white/20 text-5xl font-bold">WAB</span>
+                        <div class="w-12 h-12 rounded-full bg-brand-orange/20 flex items-center justify-center">
+                            <i class="fas fa-cog text-brand-orange text-xl animate-spin" style="animation-duration: 8s;"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                                <i class="fas fa-tools text-brand-orange"></i>
+                            </div>
+                            <span class="text-white text-sm font-semibold">Ferragens & Ferramentas</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                                <i class="fas fa-car text-brand-orange"></i>
+                            </div>
+                            <span class="text-white text-sm font-semibold">Autopeças Novas</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-brand-orange"></i>
+                            </div>
+                            <span class="text-white text-sm font-semibold">Qualidade Garantida</span>
+                        </div>
+                    </div>
+
+                    <div class="text-right text-xs text-white/40">
+                        CNPJ: 43.836.873/0001-41
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos/Serviços -->
+    <section id="produtos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Nossas Linhas de Atuação</h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded"></div>
+                <p class="mt-4 text-xl text-gray-600">Especialistas no fornecimento de itens essenciais para mecânica, construção e manutenção.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-150 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                            <i class="fas fa-wrench text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ferragens e Ferramentas</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">Comércio varejista de chaves, parafusos, ferramentas elétricas e manuais para profissionais e hobbistas.</p>
+                    </div>
+                    <span class="text-brand-orange font-semibold text-sm">CNAE Principal <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-150 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-orange text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                            <i class="fas fa-car-battery text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Peças Automotivas Novas</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">Ampla linha de componentes de motor, suspensão, freios e peças de desgaste rápido para o seu carro ou frota.</p>
+                    </div>
+                    <span class="text-brand-orange font-semibold text-sm">CNAE Secundário <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-150 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                            <i class="fas fa-sliders-h text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Acessórios Gerais</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">Equipamentos de segurança, iluminação, e acessórios automotivos internos e externos de alta qualidade.</p>
+                    </div>
+                    <span class="text-brand-orange font-semibold text-sm">Linha Completa <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós (Sem imagens externas, usando layout de benefícios) -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Painel de Destaques Visuais -->
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center">
+                        <span class="text-3xl font-bold text-brand-orange block mb-2">100%</span>
+                        <span class="text-sm font-semibold text-gray-800 uppercase tracking-wider block mb-1">Peças Novas</span>
+                        <span class="text-xs text-gray-500">Trabalhamos apenas com produtos novos e de procedência.</span>
+                    </div>
+                    <div class="bg-brand-blue p-8 rounded-2xl shadow-lg text-white flex flex-col justify-center">
+                        <i class="fas fa-truck text-3xl mb-4 text-brand-orange"></i>
+                        <span class="text-base font-bold block mb-1">Agilidade</span>
+                        <span class="text-xs text-blue-200">Pronto atendimento e envio ágil para sua comodidade.</span>
+                    </div>
+                    <div class="bg-slate-900 p-8 rounded-2xl shadow-lg text-white flex flex-col justify-center">
+                        <i class="fas fa-handshake text-3xl mb-4 text-brand-orange"></i>
+                        <span class="text-base font-bold block mb-1">Parceria</span>
+                        <span class="text-xs text-slate-400">Atendimento consultivo para te ajudar a encontrar a peça certa.</span>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center">
+                        <span class="text-3xl font-bold text-brand-blue block mb-2">SP</span>
+                        <span class="text-sm font-semibold text-gray-800 uppercase tracking-wider block mb-1">Atendimento</span>
+                        <span class="text-xs text-gray-500">Logística estruturada para entregas eficientes.</span>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre a WAB</h2>
+                    <div class="w-16 h-1 bg-brand-orange mb-6 rounded"></div>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        A <strong>Wab Comércio de Peças e Acessórios</strong> é focada no fornecimento inteligente de produtos para manutenção automotiva e industrial. Atuamos com seriedade no comércio varejista de ferragens, chaves manuais, maquinário básico e componentes mecânicos novos para veículos automotores.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Com foco na qualidade do produto final, garantimos que cada ferramenta e autopeça entregue cumpra com os mais rígidos padrões do mercado nacional.
+                    </p>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-3 flex items-center">
+                            <i class="fas fa-file-invoice-dollar text-brand-orange mr-3 text-lg"></i> Dados do Contribuinte
+                        </h4>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li><strong>Razão Social:</strong> Wab Comércio de Peças e Acessórios</li>
+                            <li><strong>CNPJ:</strong> 43.836.873/0001-41</li>
+                            <li><strong>Segmento Autopeças:</strong> Peças e acessórios novos para veículos automotores</li>
+                            <li><strong>Segmento Ferragens:</strong> Comércio varejista de ferragens e ferramentas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Detalhe decorativo de fundo -->
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl -mb-40 -mr-20"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold sm:text-4xl">Fale com Nossos Especialistas</h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded"></div>
+                <p class="mt-4 text-xl text-gray-400">Faça sua cotação de ferramentas ou peças diretamente conosco.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WhatsApp / Telefone -->
+                <a href="https://wa.me/5511948591551" target="_blank" class="bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800 hover:border-brand-orange border border-transparent transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-green-500/20 text-green-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">WhatsApp / Telefone</h3>
+                    <p class="text-gray-200 text-lg font-semibold tracking-wider font-mono">+55 (11) 94859-1551</p>
+                    <span class="text-sm text-green-400 mt-3 font-semibold flex items-center">
+                        Chame no Whats <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </span>
+                </a>
+
+                <!-- E-mail -->
+                <a href="mailto:wabcomerciodepecas@gmail.com" class="bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800 hover:border-brand-orange border border-transparent transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-mail para Orçamentos</h3>
+                    <p class="text-gray-200 text-sm font-semibold break-all">wabcomerciodepecas@gmail.com</p>
+                    <span class="text-sm text-blue-400 mt-3 font-semibold flex items-center">
+                        Enviar e-mail <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </span>
+                </a>
+
+                <!-- Atendimento -->
+                <div class="bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl flex flex-col items-center text-center border border-transparent">
+                    <div class="w-16 h-16 bg-brand-orange/20 text-brand-orange rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Atendimento</h3>
+                    <p class="text-gray-200 font-semibold">Segunda a Sexta-feira</p>
+                    <p class="text-sm text-gray-400 mt-1">Horário Comercial</p>
+                    <span class="text-xs text-brand-orange mt-3 font-semibold">Pronto Atendimento</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 text-gray-400 py-8 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+            <div>
+                <span class="text-2xl font-bold text-white tracking-tighter mr-2">WAB</span>
+                <span>&copy; <span id="year"></span>. Todos os direitos reservados.</span>
+            </div>
+            <div class="text-sm text-gray-500">
+                Wab Comércio de Peças e Acessórios | CNPJ: 43.836.873/0001-41
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511948591551" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts de Interação -->
+    <script>
+        // Ano dinâmico no rodapé
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Controle do Menu de Celular
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar o menu de celular ao clicar em qualquer item de menu
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Efeito de sombra e desfoque no cabeçalho com scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg', 'bg-white/95', 'backdrop-blur-md');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-white/95', 'backdrop-blur-md');
+            }
+        });
+    </script>
+</body>
+</html>
+
+```
